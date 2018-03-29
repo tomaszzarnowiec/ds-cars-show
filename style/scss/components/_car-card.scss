@@ -1,0 +1,158 @@
+.car-card {
+    margin-bottom: 20px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    background-color: $bg-light;
+    border-radius: 4px;
+
+    .car-photo {
+        border-radius: 4px 0px 0px 4px;
+        background-position: center;
+        background-size: cover;
+
+        display: flex;
+        align-items: flex-end;
+        overflow: hidden;
+        position: relative;
+
+        .share {
+            z-index: 10;
+            color: $bg-light;
+            opacity: 0;
+            transition: all ease-in-out .3s;
+
+            // rect
+            width: 100%;
+
+            // display: flex;
+            // justify-content: center;
+
+            i {
+                padding: 15px;
+                cursor: pointer;
+                transition: all ease-in-out .3s;
+
+                &.fa-heart-o:hover {
+                    color: $bg-primary-light;
+
+                    &:before {
+                        content: "\f004";
+                    }
+                }
+
+                &.fa-facebook:hover {
+                    color: lighten(#4267b2, 20%);
+                }
+            }
+        }
+
+        // rect
+
+        &:after {
+            content: "";
+            position: absolute;
+            height: calc(30px + 14px);
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: transparent;
+            transition: all ease-in-out .3s;
+        }
+
+        // circle
+
+        // &:after {
+        //     content: "";
+        //     position: absolute;
+        //     height: calc(2.1 * (30px + 14px));
+        //     bottom: calc(-14px - calc(30px + 14px) / 2);
+        //     left: calc(-14px - calc(30px + 14px) / 2);
+        //     width: calc(2.1 * (30px + 14px));
+        //     border-radius: 50%;
+        //     background-color: transparent;
+        //     transition: all ease-in-out .3s;
+        // }
+
+        &:hover {
+            .share {
+                opacity: 1;
+            }
+
+            &:after {
+                background-color: rgba(0, 0, 0, 0.7);
+                // background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 50%, rgba(0, 0, 0, 0.9) 100%);
+            }
+        }
+    }
+
+    .car-desc {
+        padding: 20px 5vw;
+        border-radius: 0px 4px 4px 0px;
+
+        .heading {
+            font-size: 18px;
+        }
+
+        .desc {
+            color: lighten($font-color-primary, 40%);
+        }
+
+        .features {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            li {
+                line-height: 2rem;
+
+                i {
+                    color: $bg-primary;
+                    padding: 0px 10px 0px 20px;
+
+
+                }
+
+                &:first-child {
+                    i {
+                        padding: 0px 10px 0px 0px;
+                    }
+                }
+            }
+
+            @media (max-width: 400px){
+                flex-direction: column;
+                align-items: flex-start;
+
+                li {
+                    i {
+                        padding: 0px 10px 0px 0px;
+                    }
+                }
+            }
+        }
+
+        .price-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 15px;
+            margin-bottom: 1em;
+
+            .price {
+                margin: 0;
+                font-size: 20px;
+                color: $bg-primary;
+            }
+        }
+    }
+
+    @media (max-width: 700px){
+        grid-template-columns: 1fr;
+
+        .car-photo {
+            border-radius: 4px 4px 0px 0px;
+            min-height: 200px;
+        }
+    }
+
+}

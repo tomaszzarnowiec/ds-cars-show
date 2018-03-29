@@ -1,0 +1,30 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+
+    color: $font-color-light;
+    background-color: $bg-primary;
+
+    .logo {
+        font-size: 24px;
+        padding-left: 15px;
+        font-family: $header-font;
+    }
+
+    .menu {
+        ul {
+            display: flex;
+            padding-right: 15px;
+
+            li {
+                padding: 0px 10px;
+
+                a {
+
+                }
+            }
+        }
+    }
+}

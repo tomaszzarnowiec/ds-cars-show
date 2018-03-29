@@ -1,0 +1,73 @@
+@import "fonts";
+@import "variables";
+
+@import "components/header";
+@import "components/section";
+@import "components/footer";
+
+@import "components/car-card";
+
+@import "sections/about";
+@import "sections/cars";
+@import "sections/contact";
+@import "sections/home";
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: $text-font;
+    font-weight: $font-weight;
+    font-size: $font-size;
+    background-color: $bg-semi;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: $header-font;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+
+    }
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button, .btn {
+    padding: 10px 20px;
+    cursor: pointer;
+    line-height: 40px;
+    outline: none;
+    transition: border ease-in-out .3s;
+
+    background-color: $bg-light;
+    color: $bg-primary;
+    border: 1px solid $bg-primary;
+
+    &:hover {
+        border: 1px solid $bg-primary-dark;
+    }
+
+    &.inverted {
+        background-color: $bg-primary;
+        color: $bg-light;
+        border: 1px solid $bg-light;
+
+        &:hover {
+            border: 1px solid $bg-dark;
+        }
+    }
+
+    &.sm {
+        padding: 5px 15px;
+        font-size: 12px;
+        line-height: 27px;
+    }
+}
